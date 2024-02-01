@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './fonts/fonts.css';
+
+
+body {
+  background: #f2f2f2;
+  padding-bottom:200px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  background:  #23A25D;
+  width:1920px;
+  white-space: nowrap;
+  position: relative ;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+}
+
+.logos:after {
+  right: 0;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block !important;
+  margin-top:10px;
+  margin-bottom:60px;
+
+  animation: 10s slide infinite linear;
+}
+
+.logos-slide a {
+  display: inline-block; /* Ensure images are inline */
+  height: 50px !important;
+  margin: 0 40px !important;
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-white;
+}
+.crypto-block{
+  @apply border-[#23A25D] border rounded-[20px] flex items-start flex-col pl-10 py-10 pr-[99px] gap-5;
+}
+code {
+  font-family: 'Space Grotesk',
+    monospace;
+}
+.green-button {
+  position: relative;
+  overflow: hidden; 
+  @apply  text-white font-medium  bg-[#23A25D] rounded-xl outline-none;
+  z-index: 0; 
+}
+nav-button{
+  position: relative;
+}
+header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+nav-button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: unset;
+  margin: unset;
+}
+.menu{
+  position: relative;
+}
+li {
+  padding: 14px;
+  transition: all linear 0.3s;
+}
+
+li:hover {
+  background: gray;
+  cursor: pointer;
+  color: #fff;
+}
+
+.dropdown-menu {
+  background: #fff;
+  position: relative;
+  box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+  transition: all linear 0.3s;
+}
+.green-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1; 
+  opacity: 0; 
+  background: linear-gradient(to right, rgb(44, 200, 174), #23A25D); 
+  transition: opacity 0.4s;
+}
+
+.green-button:hover::before {
+  opacity: 1; /* Fully visible on hover */
+}
+
